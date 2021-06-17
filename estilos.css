@@ -1,0 +1,6 @@
+body {
+    background:url(img/fondo.jpg) rgb(231, 195, 195);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
