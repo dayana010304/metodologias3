@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>descripcion:</label>
-                                            <textarea class="form-control" rows="3" name="DireccionEditar"> <?php echo($administracion["Direccion"])?>  </textarea>
+                                            <textarea class="form-control" rows="3" name="DireccionEditar"> <?php echo($administracion["Direccion"])?></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-info" name="botonEditar">Guardar Cambios</button>
                                     </form>

@@ -7,7 +7,7 @@
     if (isset($_POST["botonEditar"])){
 
         $propietario=$_POST["PropietarioEditar"];
-        $direccion=$_POST["DereccionEditar"];
+        $direccion=$_POST["DireccionEditar"];
 
         $transaccion=new BaseDatos();
 
