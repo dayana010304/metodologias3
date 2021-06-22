@@ -9,7 +9,7 @@
     $transaccion=new BaseDatos();
 
     //2.Consulta SQL para eliminar registros
-    $consultaSQL="DELETE FROM productos WHERE IdProducto='$id'";
+    $consultaSQL="DELETE FROM administracion WHERE Factura='$id'";
 
     //3. Utilizar el metodo eliminarDatos
     $transaccion->eliminarDatos($consultaSQL);
