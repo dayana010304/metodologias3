@@ -25,41 +25,49 @@
         <hr>
     </header>
     <div class="container">
-    <br>
-    <table class="table table-hover table-bordered table-striped">
-        <thead>
-            <th>Id Factura</th>
-            <th>Nombre propietario</th>
-            <th>N° Apartamento</th>
-            <th>Estado</th>
-            <th>Total</th>
-            <th>Generacion de factura</th>
-            <th>Fecha sin recargo</th>
-            <th>Fecha con recargo</th>
-            <th>N° Personas</th>
-            
-        </thead>
-        <tbody>
-            <?php
-            foreach ($administracion as $administracion) { ?>
-                <tr>
-                    <td><?php echo($administracion["Factura"]) ?></td>
-                    <td><?php echo($administracion["Propietario"]) ?></td>
-                    <td><?php echo($administracion["Apartamento"]) ?></td>
-                    <td><?php echo($administracion["Estado"]) ?></td>
-                    <td><?php echo($administracion["Total"]) ?></td>
-                    <td><?php echo($administracion["Generacionf"] = date('Y-m-d')) ?></td>
-                    <td><?php echo($administracion["Sinrecargo"] = date('Y-m-d')) ?></td>
-                    <td><?php echo($administracion["Conrecargo"]= date('Y-m-d')) ?></td>
-                    <td><?php echo($administracion["Personas"])?></td>
-                    <td><a href="#">Descargar factura</a></td>
+        <div class="row row-cols-1 row-cols-md-3">
+            <?php foreach($administracion as $administracion):?>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title"><?php echo($administracion["Propietario"]) ?></h3>
+                            <p class="card-text"><?php echo($administracion["Apartamento"]) ?></p>
+                            <a href="eliminarProductos.php?id=<?php echo($administracion["Factura"])?>" class="btn btn-danger">Eliminar</a>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo($administracion["Factura"])?>">    
+                                Editar
+                            </button>
+                        </div>
+                    </div>
 
-                </tr>
-            <?php
-            } ?>
-        </tbody>
-    </table>
-</div>
+                    <div class="modal fade" id="editar<?php echo($administracion["Factura"])?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">EDICIÓN DEL PRODUCTO</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="editarProductos.php?id=<?php echo($administracion["Factura"])?>" method="POST">
+                                        <div class="form-group">
+                                            <label>nombre:</label>
+                                            <input type="text" class="form-control" name="PropietarioEditar" value="<?php echo($administracion["Propietario"])?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>descripcion:</label>
+                                            <textarea class="form-control" rows="3" name="DireccionEditar"> <?php echo($administracion["Direccion"])?>  </textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-info" name="botonEditar">Guardar Cambios</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach?>
+        </div>
+    </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>

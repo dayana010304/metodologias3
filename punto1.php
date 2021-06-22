@@ -32,11 +32,19 @@
                       <div class="col">
                         <input type="text" class="form-control" placeholder="Numero del Apartamento" name="apartamento" required>
                       </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Direccion del propietario" name="direccion" required>
+                      </div>
                   </div>
                 <br>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Estado" name="estado" required>
-                      </div>
+                  <div class="col">
+                   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="estado">
+                      <option selected>Open this select menu</option>
+                      <option value="alquilado">Alquilado</option>
+                      <option value="habitado por propietario">Habitado por el propietario</option>
+                      <option value="desocupado">Desocupado</option>
+                    </select>
+                  </div>
                       <br>
                       <div class="col">
                         <input type="text" class="form-control" placeholder="Total facturas" name="total" required>

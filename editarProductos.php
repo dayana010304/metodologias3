@@ -6,12 +6,12 @@
     
     if (isset($_POST["botonEditar"])){
 
-        $nombre=$_POST["NombreEditar"];
-        $descripcion=$_POST["DescripciónEditar"];
+        $propietario=$_POST["PropietarioEditar"];
+        $direccion=$_POST["DereccionEditar"];
 
         $transaccion=new BaseDatos();
 
-        $consultaSQL="UPDATE productos SET NombreLibro='$nombre', Descripción='$descripcion' WHERE IdProducto='$id'";
+        $consultaSQL="UPDATE administracion SET Propietario='$propietario', Direccion='$direccion' WHERE Factura='$id'";
 
         $transaccion->editarDatos($consultaSQL);
 

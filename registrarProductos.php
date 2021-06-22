@@ -6,6 +6,7 @@
     {
         $propietario = $_POST["propietario"];
         $apartamento=$_POST["apartamento"];
+        $direccion=$_POST["direccion"];
         $estado=$_POST["estado"];
         $generacionf = $_POST ["generacionf"];
         $total = $_POST["total"];
@@ -15,7 +16,7 @@
 
         $transaccion = new BaseDatos();
 
-        $consultaSQL= "INSERT INTO administracion (Propietario, Apartamento, Estado, Total, GeneracionF, SinRecargo, ConRecargo, Personas) VALUES ('$propietario', '$apartamento', '$estado', '$total', '$generacionf', '$sinrecargo', '$conrecargo', '$personas')";
+        $consultaSQL= "INSERT INTO administracion (Propietario, Direccion, Apartamento,  Estado, Total, GeneracionF, SinRecargo, ConRecargo, Personas) VALUES ('$propietario', '$direccion', '$apartamento', '$estado', '$total', '$generacionf', '$sinrecargo', '$conrecargo', '$personas')";
 
         $transaccion->agregarDatos($consultaSQL);  
         
