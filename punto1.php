@@ -30,6 +30,12 @@
                         <input type="text" class="form-control" placeholder="Nombre del propietario" name="propietario" required>
                       </div>
                       <div class="col">
+                        <input type="text" class="form-control" placeholder="Correo" name="correo" required>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Telefono" name="telefono" required>
+                      </div>
+                      <div class="col">
                         <input type="text" class="form-control" placeholder="Numero del Apartamento" name="apartamento" required>
                       </div>
                       <div class="col">

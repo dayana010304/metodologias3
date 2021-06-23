@@ -13,6 +13,8 @@
 
     //3. Utilizar el metodo eliminarDatos
     $transaccion->eliminarDatos($consultaSQL);
+
+    header("location:listaProductos.php");
     
 
 
